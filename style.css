@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:400,700');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Oswald',sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #24e263ab;
+
+}
+ul{
+    position: relative;
+    transform: skewY(-20deg);
+}
+ul li:hover{
+    background: #4a48d1b2;
+    transform: translate(-50px);
+}
+ul li{
+    position: relative;
+    list-style: none;
+    width: 200px;
+    background-color: #3e3f46;
+    padding: 15px;
+    z-index: var(--i);
+    transition: 1.8s;
+}
+ul li::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -40px;
+    width: 40px;
+    height: 100%;
+    background: #2e3133;
+    transform-origin: right;
+    transform: skewY(45deg);
+    transition: 0.5s;
+}
+ul li:hover::before{
+    background: #1f5378;
+}
+ul li::after{
+    content: '';
+    position: absolute;
+    left:0;
+    top:-40px;
+    width: 100%;
+    height: 40px;
+    background: #2e3133;
+    transform-origin: bottom;
+    transform: skewX(45deg);
+    transition: 0.5s;
+}
+ul li:hover::after{
+    background: aqua;
+}
+ul li a{
+    text-decoration: none;
+    color: orangered;
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 0.05s;
+}
+ul :hover {
+    color: orangered;
+}
+ul li:last-child::after{
+    box-shadow: -100px 100px 20px rgb(66, 70, 33);
+}
